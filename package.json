@@ -1,0 +1,45 @@
+{
+  "name": "library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "DEBUG=app nodemon app.js",
+    "debug-all": "DEBUG=* node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint app.js",
+    "lint-fix": "eslint app.js --fix"
+  },
+  "author": "Alexandru Cardas",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "4.4.1",
+    "chalk": "2.4.2",
+    "debug": "4.1.1",
+    "express": "^4.17.1",
+    "jquery": "3.4.1",
+    "morgan": "1.9.1",
+    "nodemon": "2.0.2",
+    "popper.js": "1.16.1"
+  },
+  "devDependencies": {
+    "eslint": "6.8.0",
+    "eslint-config-airbnb-base": "14.0.0",
+    "eslint-config-standard": "14.1.0",
+    "eslint-plugin-import": "2.20.0",
+    "eslint-plugin-node": "11.0.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-standard": "4.0.1"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      "node_modules/**/node_modules"
+    ],
+    "delay": "2500",
+    "env": {
+      "NODE_ENV": "development",
+      "PORT": 4000
+    }
+  }
+}
