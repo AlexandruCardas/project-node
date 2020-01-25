@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="file://$PROJECT_DIR$" libraries="{node-project/node_modules}" />
-    <file url="PROJECT" libraries="{@types/ejs, @types/ejs-locals, @types/express, bootstrap, jquery-3.4.1.slim, node-project/node_modules, popper}" />
+    <file url="PROJECT" libraries="{@types/cookie-parser, @types/ejs, @types/ejs-locals, @types/express, @types/express-session, @types/mongodb, @types/passport, @types/passport-local, @types/passport-strategy, @types/pug, bootstrap, jquery-3.4.1.slim, popper}" />
+    <includedPredefinedLibrary name="HTTP Response Handler" />
     <includedPredefinedLibrary name="Node.js Core" />
   </component>
 </project>
