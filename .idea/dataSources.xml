@@ -7,5 +7,11 @@
       <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
       <jdbc-url>jdbc:sqlserver://calexc95.database.windows.net:1433;database=PSLibrary</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="MongoDB" uuid="e76eebdd-937f-493d-b410-101929c4fd3e">
+      <driver-ref>mongo</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.dbschema.MongoJdbcDriver</jdbc-driver>
+      <jdbc-url>mongodb://172.17.0.2:27017/LibraryApp</jdbc-url>
+    </data-source>
   </component>
 </project>
