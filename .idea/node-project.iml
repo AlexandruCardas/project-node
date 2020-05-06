@@ -21,5 +21,9 @@
     <orderEntry type="library" name="@types/passport-local" level="application" />
     <orderEntry type="library" name="@types/passport-strategy" level="application" />
     <orderEntry type="library" name="@types/xml2js" level="application" />
+    <orderEntry type="library" name="@types/body-parser" level="application" />
+    <orderEntry type="library" name="@types/express" level="application" />
+    <orderEntry type="library" name="@types/node" level="application" />
+    <orderEntry type="library" name="@types/xml2js" level="application" />
   </component>
 </module>

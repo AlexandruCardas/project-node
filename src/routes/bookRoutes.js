@@ -1,13 +1,12 @@
-const express = require('express');
-const { MongoClient, ObjectID } = require('mongodb'); // Destructure it.
-const debug = require('debug')('app:bookRoutes');
+import express from 'express'
+import mongoClient from 'mongodb'; // Destructure it.
 
-const bookController = require('../controllers/bookController');
+import bookController from '../controllers/bookController.js';
 
 const bookRouter = express.Router();
-const bookService = require('../services/goodreadsService');
+import bookService from '../services/goodreadsService.js'
 
-function router(nav) {
+export default function router(nav) {
   const { getIndex, getById, middleware } = bookController(bookService, nav);
   bookRouter.use(middleware);
   bookRouter.route('/').get(getIndex);
@@ -15,5 +14,3 @@ function router(nav) {
   bookRouter.route('/:id').get(getById);
   return bookRouter;
 }
-
-module.exports = router;

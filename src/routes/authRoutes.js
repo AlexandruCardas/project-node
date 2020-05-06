@@ -1,11 +1,18 @@
-const express = require('express');
-const { MongoClient, ObjectID } = require('mongodb'); // Destructure it.
-const debug = require('debug')('app:authRoutes');
-const passport = require('passport');
+import chalk from 'chalk'
+import express from 'express'
+import debug from 'debug'
+import morgan from 'morgan'
+import path from 'path'
+import passport from 'passport'
+import bodyParser from 'body-parser'
+import cookieParser from 'cookie-parser'
+import session from 'express-session'
+import * as mongodb from 'mongodb'
+
 
 const authRouter = express.Router();
 
-function router(nav) {
+export default function router(nav) {
   authRouter.route('/signUp').post((req, res) => {
     const { username, password } = req.body;
     const url = 'mongodb://172.17.0.2:27017/LibraryApp?authSource=admin';
@@ -15,7 +22,7 @@ function router(nav) {
       let client;
 
       try {
-        client = await MongoClient.connect(url);
+        client = await mongodb.connect(url);
 
         debug('Connected correctly to server');
 
@@ -60,5 +67,3 @@ function router(nav) {
 
   return authRouter;
 }
-
-module.exports = router;

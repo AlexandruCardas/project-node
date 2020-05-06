@@ -1,14 +1,14 @@
-const { MongoClient, ObjectID } = require('mongodb'); // Destructure it.
-const debug = require('debug')('app:bookController');
+import * as mongodb from 'mongodb';
+import debug from 'debug'
 
-function bookController(bookService, nav) {
+export default function bookController(bookService, nav) {
   function getIndex(req, res) {
     const url = 'mongodb://172.17.0.2:27017/LibraryApp?authSource=admin';
     const dbName = 'LibraryApp';
     (async function mongo() {
       let client;
       try {
-        client = await MongoClient.connect(url);
+        client = await mongodb.connect(url);
         debug('Connected correctly to server');
 
         const db = client.db(dbName);
@@ -39,7 +39,7 @@ function bookController(bookService, nav) {
     (async function mongo() {
       let client;
       try {
-        client = await MongoClient.connect(url);
+        client = await mongodb.connect(url);
         debug('Connected correctly to server');
 
         const db = client.db(dbName);
@@ -77,5 +77,3 @@ function bookController(bookService, nav) {
     middleware
   };
 }
-
-module.exports = bookController;

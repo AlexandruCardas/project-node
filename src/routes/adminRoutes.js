@@ -1,6 +1,6 @@
-const express = require('express');
-const { MongoClient } = require('mongodb'); // Destructure it.
-const debug = require('debug')('app:adminRoutes');
+import express from 'express'
+import debug from 'debug'
+import * as mongodb from 'mongodb'
 
 const adminRouter = express.Router();
 const books = [
@@ -55,14 +55,14 @@ const books = [
     read: false
   }];
 
-function router(nav) {
+export default function router(nav) {
   adminRouter.route('/').get((req, res) => {
     const url = 'mongodb://172.17.0.2:27017/LibraryApp?authSource=admin';
     const dbName = 'LibraryApp';
     (async function mongo() {
       let client;
       try {
-        client = await MongoClient.connect(url);
+        client = await mongodb.connect(url);
         debug(client);
 
         const db = client.db(dbName);
@@ -78,5 +78,3 @@ function router(nav) {
 
   return adminRouter;
 }
-
-module.exports = router;
