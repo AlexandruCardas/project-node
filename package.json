@@ -30,7 +30,7 @@
     "passport": "0.4.1",
     "passport-local": "1.0.0",
     "popper.js": "1.16.1",
-    "pug": "2.0.4",
+    "pug": "3.0.1",
     "pug-cli": "1.0.0-alpha6",
     "xml2js": "0.4.23"
   }
